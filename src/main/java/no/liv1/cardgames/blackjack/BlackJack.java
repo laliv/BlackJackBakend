@@ -11,11 +11,6 @@ public class BlackJack {
         return count > BLACK_JACK;
     }
 
-    /*
-    public boolean isWinner(Player player){
-        player.sumOfCards =
-    }*/
-
     public boolean isBlackJack(){
         return playersCount == BLACK_JACK;
     }

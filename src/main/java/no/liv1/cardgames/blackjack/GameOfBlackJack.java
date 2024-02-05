@@ -1,22 +1,15 @@
 package no.liv1.cardgames.blackjack;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.yaml.snakeyaml.util.ArrayUtils;
-
 import java.util.*;
 
 @Component
 public class GameOfBlackJack {
-
-    public static int hand = 2;
     public static int NUMBER_OF_PLAYERS = 2;
-
+    private static int POINT_OF_STOP = 17;
     public String WINNER;
     private boolean waitingForAWinner = true;
-
     private String[] output = new String[NUMBER_OF_PLAYERS];
-
     private DealerStack dealerStack = new DealerStack(new StackOfCardsConverter().makeDealerStack());
     private ArrayList<Card> dealerCardsOnTable = new ArrayList<>();
     private Player[] players = new Player[NUMBER_OF_PLAYERS];
@@ -27,7 +20,6 @@ public class GameOfBlackJack {
 
     public String dealersHand(){
         Card card = dealerStack.pollCard();
-        //BlackJack.addDealersCount(card);
         dealerCardsOnTable.add(card);
         return String.format("Dealer | %s", dealerCardsOnTable);
     }
@@ -53,20 +45,19 @@ public class GameOfBlackJack {
     }
 
     public String dealInitial(){
-        //for (int j = 0; j < hand; j++) {
             for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
-                //if(players[i] == null) {
-                    players[i] = new Player(i, dealerStack.pollCard());
-                //} else  {
-                    players[i].addCard(dealerStack.pollCard());
-                //}
+                players[i] = new Player(i, dealerStack.pollCard());
+                players[i].addCard(dealerStack.pollCard());
+                if(players[i].getSumOfCards() >= POINT_OF_STOP){
+                    break;
+                }
                 output[i] = String.format("%s | %s | %s\n", players[i].name, players[i].getSumOfCards(), players[i].showCards());
                 System.out.println(output[i]);
                 evaluateWinner(i);
+                if(players[i].getSumOfCards() >= POINT_OF_STOP){
+                    break;
+                }
             }
-
-        //System.out.println(Arrays.stream(output).iterator().next().toString());
-        //System.out.println(dealersHand());
         return output.toString();
     }
 
@@ -77,13 +68,5 @@ public class GameOfBlackJack {
             System.out.println("WINNER : " + WINNER);
             waitingForAWinner = false;
         }
-    }
-
-    private void determineBlackJack(){
-
-    }
-
-    private void sumCards(){
-
     }
 }

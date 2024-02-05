@@ -8,13 +8,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-//@Configuration
-//@PropertySource("classpath:application.properties")
-@Configuration
-@ConfigurationProperties(prefix = "blackjack")
+@Component
 public class BlackJackProperties {
 
-    @Value("blackjack.url")
+    @Value("${blackjack.url}")
     private String url;
 
     @Bean

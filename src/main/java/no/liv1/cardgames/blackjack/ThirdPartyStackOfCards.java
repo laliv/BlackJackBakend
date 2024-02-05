@@ -2,18 +2,15 @@ package no.liv1.cardgames.blackjack;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 
-import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 @Component
@@ -22,7 +19,7 @@ public class ThirdPartyStackOfCards implements ValidateJsonContent {
     private static final Logger log = LoggerFactory.getLogger(ThirdPartyStackOfCards.class);
 
     @Autowired
-    BlackJackProperties env;
+    private BlackJackProperties env;
 
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
@@ -30,11 +27,13 @@ public class ThirdPartyStackOfCards implements ValidateJsonContent {
     }
 
     public Quote[] getJson(RestTemplate restTemplate) {
-        //log.info(env.getShuffleUrl());
         try {
             Quote[] quote = restTemplate.getForObject(
                     "https://blackjack.ekstern.dev.nav.no/shuffle", Quote[].class);
             log.info(Arrays.toString(quote));
+            if(!hasFifitwoCards(quote)){
+                log.error("INVALID NUMBER OF CARDS!!");
+            }
             return quote;
         } catch(Exception e) {
             e.getMessage();
@@ -43,12 +42,8 @@ public class ThirdPartyStackOfCards implements ValidateJsonContent {
     }
 
     @Override
-    public boolean hasFifitwoCards() {
-        return false;
+    public boolean hasFifitwoCards(Quote[] q) {
+        return q.length == ValidateJsonContent.EXPECTED_NUMBER_OF_CARDS;
     }
 
-    @Override
-    public boolean hasDistinctCards() {
-        return false;
-    }
 }

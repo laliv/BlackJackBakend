@@ -4,17 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7067b95e-0f29-4827-9b39-fd6b632316f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJackApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="7067b95e-0f29-4827-9b39-fd6b632316f5" name="Changes" comment="Initial push">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJackProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJackProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/CardType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/CardType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/DealerStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/DealerStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/GameOfBlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/GameOfBlackJack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Hand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/JsonToStackOfCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/JsonToStackOfCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/PlayBlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/PlayBlackJack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/PlayerName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/PlayerStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/StackOfCards.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/StackOfCardsConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/StackOfCardsConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/ThirdPartyStackOfCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/ThirdPartyStackOfCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/ValidateJsonContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/ValidateJsonContent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,6 +66,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lars\Downloads\demo\BlackJackBackend" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="no.liv1.cardgames.blackjack" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="no.liv1.cardgames.blackjack" />
@@ -126,6 +138,15 @@
       <option name="presentableId" value="Default" />
       <updated>1706943488030</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial push">
+      <option name="closed" value="true" />
+      <created>1707162944216</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707162944216</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,5 +159,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial push" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial push" />
   </component>
 </project>

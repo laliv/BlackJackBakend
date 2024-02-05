@@ -1,9 +1,5 @@
 package no.liv1.cardgames.blackjack;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-
-
 public final class Card {
 
     private Enum cardType;

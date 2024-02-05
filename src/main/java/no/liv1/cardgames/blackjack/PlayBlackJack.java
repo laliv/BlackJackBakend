@@ -1,19 +1,14 @@
 package no.liv1.cardgames.blackjack;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
 
 @RestController
 public class PlayBlackJack {
-
-
 
     private GameOfBlackJack game = new GameOfBlackJack();
 
@@ -43,8 +38,8 @@ public class PlayBlackJack {
     @RequestMapping(value = "/hit", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @GetMapping("/hit")
-    public String hit() {
-        return game.dealInitial();
+    public String[] hit() {
+        return game.dealCardsToPlayer();
         //return String.format("%s", new StackOfCardsConverter().makeDealerStack());
     }
 
