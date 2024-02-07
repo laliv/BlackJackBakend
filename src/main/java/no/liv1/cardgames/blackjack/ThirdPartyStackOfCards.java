@@ -17,9 +17,12 @@ import java.util.Arrays;
 public class ThirdPartyStackOfCards implements ValidateJsonContent {
 
     private static final Logger log = LoggerFactory.getLogger(ThirdPartyStackOfCards.class);
+    private String shuffleUrl;
 
     @Autowired
-    private BlackJackProperties env;
+    public ThirdPartyStackOfCards(String shuffleUrl){
+        this.shuffleUrl = shuffleUrl;
+    }
 
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
@@ -29,7 +32,7 @@ public class ThirdPartyStackOfCards implements ValidateJsonContent {
     public Quote[] getJson(RestTemplate restTemplate) {
         try {
             Quote[] quote = restTemplate.getForObject(
-                    "https://blackjack.ekstern.dev.nav.no/shuffle", Quote[].class);
+                    shuffleUrl, Quote[].class);
             log.info(Arrays.toString(quote));
             if(!hasFifitwoCards(quote)){
                 log.error("INVALID NUMBER OF CARDS!!");

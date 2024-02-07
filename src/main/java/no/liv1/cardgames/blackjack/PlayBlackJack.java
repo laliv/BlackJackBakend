@@ -1,16 +1,24 @@
 package no.liv1.cardgames.blackjack;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 
 @RestController
 public class PlayBlackJack {
 
-    private GameOfBlackJack game = new GameOfBlackJack();
+    @Autowired
+    private GameOfBlackJack game;
+   // private ArrayList<Player> listOfPlayers = (ArrayList) Arrays.asList(players).stream().map(name -> new Player(name)).collect(Collectors.toList());
 
     @RequestMapping(value = "/showCards", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -22,7 +30,7 @@ public class PlayBlackJack {
     @RequestMapping(value = "/dealCards", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @GetMapping("/dealCards")
-    public String[] dealCards() {
+    public String dealCards() {
         return game.dealCardsToPlayer();
         //return String.format("%s", new StackOfCardsConverter().makeDealerStack());
     }
@@ -38,7 +46,7 @@ public class PlayBlackJack {
     @RequestMapping(value = "/hit", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @GetMapping("/hit")
-    public String[] hit() {
+    public String hit() {
         return game.dealCardsToPlayer();
         //return String.format("%s", new StackOfCardsConverter().makeDealerStack());
     }
@@ -55,6 +63,7 @@ public class PlayBlackJack {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @GetMapping("/playRound")
     public String playRound() {
+        //System.out.println(Arrays.toString(players));
         game.playRound();
         return "";
         //return String.format("%s", new StackOfCardsConverter().makeDealerStack());

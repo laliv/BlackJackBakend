@@ -1,13 +1,15 @@
 package no.liv1.cardgames.blackjack;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.*;
 
 public class DealerStack {
 
     public ArrayList<Card> cards;
 
-    public DealerStack(ArrayList<Card> card){
-        this.cards = card;
+    public DealerStack(String shuffleUrl){
+        this.cards = new StackOfCardsConverter(shuffleUrl).makeDealerStack();
     }
 
     public Card pollCard() {

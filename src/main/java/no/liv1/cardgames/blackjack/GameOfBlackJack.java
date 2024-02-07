@@ -1,70 +1,94 @@
 package no.liv1.cardgames.blackjack;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.stereotype.Controller;
 import java.util.*;
+import java.util.stream.Collectors;
 
-@Component
+@Controller
+@EnableConfigurationProperties(BlackJackProperties.class)
 public class GameOfBlackJack {
     public static int NUMBER_OF_PLAYERS = 2;
     private static int POINT_OF_STOP = 17;
     public String WINNER;
     private boolean waitingForAWinner = true;
-    private String[] output = new String[NUMBER_OF_PLAYERS];
-    private DealerStack dealerStack = new DealerStack(new StackOfCardsConverter().makeDealerStack());
+    private HashMap<String, String> outputMap = new HashMap();
+    private DealerStack dealerStack;
     private ArrayList<Card> dealerCardsOnTable = new ArrayList<>();
-    private Player[] players = new Player[NUMBER_OF_PLAYERS];
+    private ArrayList<Player> players;
+    private BlackJackProperties properties;
 
-    public String showDealerCards(){
+    @Autowired
+    public GameOfBlackJack(BlackJackProperties properties) {
+        this.properties = properties;
+        dealerStack = new DealerStack(properties.getShuffleUrl());
+        players = (ArrayList) Arrays.asList(properties.getPlayers()).stream().map(name -> new Player(name)).collect(Collectors.toList());
+    }
+
+    public String showDealerCards() {
         return dealerStack.toString();
     }
 
-    public String dealersHand(){
+    public String dealersHand() {
         Card card = dealerStack.pollCard();
         dealerCardsOnTable.add(card);
         return String.format("Dealer | %s", dealerCardsOnTable);
     }
 
-    public String[] dealCardsToPlayer() {
-            for (int i = 0; i < NUMBER_OF_PLAYERS; i++ ) {
-                players[i].addCard(dealerStack.pollCard());
-                output[i] += String.format("%s | %s | %s\n", players[i].name, players[i].getSumOfCards(), players[i].showCards());
-               // System.out.println(output[i]);
-               evaluateWinner(i);
+    public String dealCardsToPlayer() {
+        for (Player player : players) {
+            player.addCard(dealerStack.pollCard());
+            outputMap.put(player.name, String.format("%s | %s | %s\n", player.name, player.getSumOfCards(), player.showCards()));
+            System.out.println(outputMap.get(player.name));
+            if (player.getSumOfCards() >= POINT_OF_STOP && player.getSumOfCards() <= BlackJack.BLACK_JACK) {
+                player.setExhausted();
             }
-        return output;
-    }
-
-    public void playRound(){
-        dealInitial();
-        ArrayList<Player> playerlist = new ArrayList<>(Arrays.asList(this.players));
-        Iterator<Player> i = playerlist.iterator();
-        while ( waitingForAWinner ) {
-            dealCardsToPlayer();
-           // System.out.println(dealersHand());
+            evaluateWinner(player);
+            if (!waitingForAWinner) {
+                break;
+            }
         }
+        return outputMap.values().stream().toString();
     }
 
-    public String dealInitial(){
-            for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
-                players[i] = new Player(i, dealerStack.pollCard());
-                players[i].addCard(dealerStack.pollCard());
-                if(players[i].getSumOfCards() >= POINT_OF_STOP){
-                    break;
-                }
-                output[i] = String.format("%s | %s | %s\n", players[i].name, players[i].getSumOfCards(), players[i].showCards());
-                System.out.println(output[i]);
-                evaluateWinner(i);
-                if(players[i].getSumOfCards() >= POINT_OF_STOP){
-                    break;
-                }
+    public String playRound() {
+        dealInitial();
+        while (waitingForAWinner) {
+            dealCardsToPlayer();
+        }
+        System.out.println("Round finished");
+        resetGame();
+        return Arrays.toString(outputMap.values().toArray());
+    }
+
+    private void resetGame(){
+        dealerStack = new DealerStack(properties.getShuffleUrl());
+        players.forEach(player -> player.resetPlayer());
+    }
+
+    public String dealInitial() {
+        for (Player player : players) {
+            player.addCard(dealerStack.pollCard());
+            player.addCard(dealerStack.pollCard());
+            outputMap.put(player.name, String.format("%s | %s | %s\n", player.name, player.getSumOfCards(), player.showCards()));
+            System.out.println(outputMap.get(player.name));
+            if (player.getSumOfCards() >= POINT_OF_STOP && player.getSumOfCards() <= BlackJack.BLACK_JACK) {
+                continue;
             }
-        return output.toString();
+            evaluateWinner(player);
+            if (!waitingForAWinner) {
+                break;
+            }
+        }
+        return outputMap.toString();
     }
 
-    private void evaluateWinner(int index){
-        if(BlackJack.isBusted(players[index].getSumOfCards())){
-            final String looser = players[index].name;
-            WINNER = Arrays.stream(players).filter(name -> !name.equals(looser)).findFirst().get().name;
+    private void evaluateWinner(Player aboutToloos) {
+        if (BlackJack.isBusted(aboutToloos.getSumOfCards())) {
+            final String looser = aboutToloos.name;
+            // WORKS ONLY WITH TWO PLAYERS
+            WINNER = players.stream().filter(player -> !player.name.equals(looser)).findFirst().get().name;
             System.out.println("WINNER : " + WINNER);
             waitingForAWinner = false;
         }
