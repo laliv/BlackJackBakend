@@ -19,6 +19,8 @@ public class GameOfBlackJack {
     private ArrayList<Player> players;
     private BlackJackProperties properties;
 
+    private BlackJack bj = new BlackJack();
+
     @Autowired
     public GameOfBlackJack(BlackJackProperties properties) {
         this.properties = properties;
@@ -39,7 +41,8 @@ public class GameOfBlackJack {
     public String dealCardsToPlayer() {
         for (Player player : players) {
             player.addCard(dealerStack.pollCard());
-            outputMap.put(player.name, String.format("%s | %s | %s\n", player.name, player.getSumOfCards(), player.showCards()));
+            bj.updateBlackJackResult(player);
+            outputMap.put(player.name, outputMap.get(player.name) + "\n" +String.format("%s | %s | %s\n", player.name, player.getSumOfCards(), player.showCards()));
             System.out.println(outputMap.get(player.name));
             if (player.getSumOfCards() >= POINT_OF_STOP && player.getSumOfCards() <= BlackJack.BLACK_JACK) {
                 player.setExhausted();
@@ -59,7 +62,7 @@ public class GameOfBlackJack {
         }
         System.out.println("Round finished");
         resetGame();
-        return Arrays.toString(outputMap.values().toArray());
+        return bj.getBlackJackResult();
     }
 
     private void resetGame(){
@@ -71,6 +74,7 @@ public class GameOfBlackJack {
         for (Player player : players) {
             player.addCard(dealerStack.pollCard());
             player.addCard(dealerStack.pollCard());
+            bj.updateBlackJackResult(player);
             outputMap.put(player.name, String.format("%s | %s | %s\n", player.name, player.getSumOfCards(), player.showCards()));
             System.out.println(outputMap.get(player.name));
             if (player.getSumOfCards() >= POINT_OF_STOP && player.getSumOfCards() <= BlackJack.BLACK_JACK) {

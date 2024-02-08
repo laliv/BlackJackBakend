@@ -1,7 +1,6 @@
 package no.liv1.cardgames.blackjack;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.stereotype.Component;
 import java.util.*;
 
 

@@ -4,12 +4,21 @@ import java.util.ArrayList;
 
 public class Player {
     protected ArrayList<Card> cards = new ArrayList();
+
     protected String name;
     protected int sumOfCards = 0;
 
     private boolean isExhausted = false;
     public Player(String name) {
         this.name = name;
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void addCard(Card c) {

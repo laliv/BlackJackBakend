@@ -1,5 +1,11 @@
 package no.liv1.cardgames.blackjack;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.io.OutputStream;
+
 public class BlackJack {
 
     public static final int BLACK_JACK = 21;
@@ -7,12 +13,35 @@ public class BlackJack {
     public static int dealersCount = 0;
     public static int playersCount = 0;
 
+
+    public String blackJackResult;
+
+
     public static boolean isBusted(int count){
         return count > BLACK_JACK;
     }
 
     public boolean isBlackJack(){
         return playersCount == BLACK_JACK;
+    }
+
+    private String jsonSerialize(Player p) {
+        try {
+            ObjectMapper om = new ObjectMapper();
+            String o = om.writeValueAsString(p);
+            return o;
+        } catch (JsonProcessingException e) {
+            e.getMessage();
+        }
+        return "Unable to convert to json";
+    }
+
+    public String getBlackJackResult() {
+        return blackJackResult;
+    }
+
+    public void updateBlackJackResult(Player p) {
+        this.blackJackResult += jsonSerialize(p);
     }
 
     public static Card addPlayersCount(Card card) {
