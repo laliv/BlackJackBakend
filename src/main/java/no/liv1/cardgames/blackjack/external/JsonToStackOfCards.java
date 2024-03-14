@@ -1,4 +1,6 @@
-package no.liv1.cardgames.blackjack;
+package no.liv1.cardgames.blackjack.external;
+
+import no.liv1.cardgames.blackjack.game.Card;
 
 import java.util.ArrayList;
 

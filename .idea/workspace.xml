@@ -5,13 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7067b95e-0f29-4827-9b39-fd6b632316f5" name="Changes" comment="Commit after timelimit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/CardType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/GameOfBlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/GameOfBlackJack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/PlayBlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/PlayBlackJack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/StackOfCardsConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/StackOfCardsConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BigCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/BigCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/BlackJack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJackProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJackProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/CardType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/DealerStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/DealerStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/GameOfBlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/GameOfBlackJack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/JsonToStackOfCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/external/JsonToStackOfCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/PlayBlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/rest/PlayBlackJack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Quote.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/StackOfCardsConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/external/StackOfCardsConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/ThirdPartyStackOfCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/external/ThirdPartyStackOfCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/ValidateJsonContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/external/ValidateJsonContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/no/liv1/cardgames/blackjack/ThirdPartyStackOfCardsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/liv1/cardgames/blackjack/ThirdPartyStackOfCardsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,14 +39,18 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2bqXG8Y8108i0IXAfRCwC25ybCw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -54,7 +71,10 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Lars/Downloads/demo/BlackJackBackend",
-    "settings.editor.selected.configurable": "advanced.settings"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -74,7 +94,7 @@
       <module name="BlackJackBackend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="no.liv1.cardgames.blackjack.*" />
+          <option name="PATTERN" value="no.liv1.cardgames.blackjack.external.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,7 +107,7 @@
       <module name="BlackJackBackend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="no.liv1.cardgames.blackjack.*" />
+          <option name="PATTERN" value="no.liv1.cardgames.blackjack.external.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,11 +116,11 @@
       </method>
     </configuration>
     <configuration name="ThirdPartyStackOfCards" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="no.liv1.cardgames.blackjack.ThirdPartyStackOfCards" />
+      <option name="MAIN_CLASS_NAME" value="no.liv1.cardgames.blackjack.external.ThirdPartyStackOfCards" />
       <module name="BlackJackBackend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="no.liv1.cardgames.blackjack.*" />
+          <option name="PATTERN" value="no.liv1.cardgames.blackjack.external.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -171,42 +191,42 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Player.java</url>
           <line>41</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Player.java</url>
           <line>43</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Player.java</url>
           <line>45</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Player.java</url>
           <line>47</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Player.java</url>
           <line>49</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/GameOfBlackJack.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/GameOfBlackJack.java</url>
           <line>54</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Player.java</url>
           <line>25</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/GameOfBlackJack.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/GameOfBlackJack.java</url>
           <line>95</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>

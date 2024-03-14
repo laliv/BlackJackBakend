@@ -1,4 +1,4 @@
-package no.liv1.cardgames.blackjack;
+package no.liv1.cardgames.blackjack.game;
 
 public enum BigCard {
 
