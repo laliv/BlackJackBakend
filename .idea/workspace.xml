@@ -5,26 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7067b95e-0f29-4827-9b39-fd6b632316f5" name="Changes" comment="Commit after timelimit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/CardType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/kafka/CardsProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/kafka/JsonPOJODeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/kafka/JsonPOJOSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/kafka/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/kafka/KafkaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/kafka/KafkaStreamsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/kafka/embedded/KafkaConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/kafka/embedded/KafkaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/kafka/embedded/KafkaProducerConsumerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/no/liv1/cardgames/blackjack/kafka/KafkaLoadCardsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/no/liv1/cardgames/blackjack/kafka/KafkaStreamsApplicationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/no/liv1/cardgames/blackjack/kafka/KafkaTestContainers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/no/liv1/cardgames/blackjack/kafka/embedded/EmbeddedKafkaIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BigCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/BigCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/BlackJack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJackProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/BlackJackProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/CardType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/DealerStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/DealerStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/GameOfBlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/GameOfBlackJack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/JsonToStackOfCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/external/JsonToStackOfCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/PlayBlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/rest/PlayBlackJack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/Quote.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/StackOfCardsConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/external/StackOfCardsConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/ThirdPartyStackOfCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/external/ThirdPartyStackOfCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/ValidateJsonContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/no/liv1/cardgames/blackjack/external/ValidateJsonContent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/no/liv1/cardgames/blackjack/ThirdPartyStackOfCardsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/no/liv1/cardgames/blackjack/ThirdPartyStackOfCardsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,31 +53,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BlackJackApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.ThirdPartyStackOfCards.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Maven.BlackJackBackend [clean,install].executor": "Run",
-    "Maven.BlackJackBackend [clean].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Lars/Downloads/demo/BlackJackBackend",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BlackJackApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThirdPartyStackOfCards.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Maven.BlackJackBackend [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.BlackJackBackend [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lars/Downloads/demo/BlackJackBackend&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lars\Downloads\demo\BlackJackBackend" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="no.liv1.cardgames.blackjack.kafka" />
       <recent name="no.liv1.cardgames.blackjack" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
